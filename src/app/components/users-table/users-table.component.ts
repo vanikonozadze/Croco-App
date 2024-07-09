@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { FooterComponent } from "../footer/footer.component";
+import { CrocoService } from '../../service/croco.service';
 
 @Component({
   selector: 'app-users-table',
@@ -19,7 +20,19 @@ export class UsersTableComponent {
   router = inject(Router);
 
   ngOnInit(): void {
-    this.fetchUsers()
+    this.fetchUsers();
+    this.fetchData();
+  }
+
+  constructor(private crocorService: CrocoService) {
+  }
+
+  fetchData(){
+    this.crocorService.getData().subscribe({
+      next: (repsone) => {
+        console.log(repsone); 
+      }
+    })
   }
 
   fetchUsers(){
@@ -27,12 +40,10 @@ export class UsersTableComponent {
     .get("https://jsonplaceholder.typicode.com/users")
     .subscribe((data) => {
       this.users = data;
-      console.log(this.users);
     })
   }
 
   viewUserPosts(userId: string): void {
-    // console.log(typeof userId.toString());
     this.router.navigate([`users/posts/${userId.toString()}`]);
   }
 

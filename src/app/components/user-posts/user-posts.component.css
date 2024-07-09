@@ -20,7 +20,6 @@
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    cursor: pointer;
   }
   
   .post-box:hover {
@@ -40,3 +39,17 @@
     line-height: 1.6;
   }
   
+
+  .title-eye-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .title-eye-box svg{
+    cursor: pointer;
+  }
+  
+  .title-eye-box svg:hover{
+    fill: #1adc00;
+  }

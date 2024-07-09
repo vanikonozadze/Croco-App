@@ -28,7 +28,6 @@ export class NavigationComponent implements OnInit {
     .get("https://jsonplaceholder.typicode.com/users")
     .subscribe((data) => {
       this.users = data;
-      console.log(this.users);
     })
   }
 
@@ -37,7 +36,6 @@ export class NavigationComponent implements OnInit {
     .get("https://jsonplaceholder.typicode.com/posts")
     .subscribe((data) => {
       this.posts = data;
-      console.log(this.posts);
     })
   }
 

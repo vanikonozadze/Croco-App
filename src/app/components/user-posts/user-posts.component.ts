@@ -41,4 +41,8 @@ export class UserPostsComponent {
       });
   }
 
+  thisLog(id: number){
+    console.log(id)
+  }
+
 }
