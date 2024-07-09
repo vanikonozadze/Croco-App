@@ -1,5 +1,5 @@
 
-<div class="menu-container" (click)="toggleFavView()">
+<div class="menu-container" (click)="toggleMenuView()">
     <div class="sidebar" (click)="handleSidebarClick($event)">
       <div class="menu-header">
         <svg
@@ -8,7 +8,7 @@
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          (click)="toggleFavView()"
+          (click)="toggleMenuView()"
           class="close-icon"
         >
           <path
@@ -21,8 +21,8 @@
         <h1>Croco App</h1>
       </div>
       <div class="menu-button-container">
-        <button class="button">User</button>
-        <button class="button">Posts</button>
+        <button class="button" (click)="fetchUsers()" routerLink="/users">User</button>
+        <button class="button" (click)="fetchPosts()" routerLink="/posts">Posts</button>
       </div>
     </div>
   </div>

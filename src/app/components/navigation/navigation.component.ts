@@ -1,18 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CrocoService } from '../../service/croco.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, HttpClientModule, RouterModule],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.css'
 })
-export class NavigationComponent {
+export class NavigationComponent implements OnInit {
+
+  users: any;
+  posts: any;
+
+  httpClient = inject(HttpClient)
 
   constructor(private crocoService: CrocoService) {}
+  
+  ngOnInit(): void {
+  }
 
-  toggleFavView() {
+  fetchUsers(){
+    this.httpClient
+    .get("https://jsonplaceholder.typicode.com/users")
+    .subscribe((data) => {
+      this.users = data;
+      console.log(this.users);
+    })
+  }
+
+  fetchPosts(){
+    this.httpClient
+    .get("https://jsonplaceholder.typicode.com/posts")
+    .subscribe((data) => {
+      this.posts = data;
+      console.log(this.posts);
+    })
+  }
+
+  toggleMenuView() {
     this.crocoService.toggleMenu();
   }
 

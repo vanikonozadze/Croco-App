@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
 
   toggleMenuSection(){
     this.crocoService.toggleMenu();
-    console.log(this.crocoService.showMenu);
   }
 
 }
