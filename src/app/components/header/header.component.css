@@ -1,0 +1,38 @@
+header {
+  position: relative;
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+  
+.header-items{
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon{
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+  
+a:hover {
+  color: #7e7e7e;
+}
+
+h1{
+  padding-left: 30px;
+  text-decoration: none;
+}
+  
+div {
+  margin: 0 10px;
+}
+ 
+
+.date{
+  position: absolute;
+  right: 0;
+}
