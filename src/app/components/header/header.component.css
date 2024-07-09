@@ -29,6 +29,7 @@ h1{
 h1:hover{
   color: #0d3e06;
   transition: 0.3s;
+  cursor: pointer;
 }
   
 div {

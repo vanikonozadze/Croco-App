@@ -1,13 +1,9 @@
 import { Routes } from '@angular/router';
-import { MainComponent } from './components/main/main.component';
-import { UsersTableComponent } from './components/users-table/users-table.component';
-import { PostsTableComponent } from './components/posts-table/posts-table.component';
-import { UserPostsComponent } from './components/user-posts/user-posts.component';
 
 export const routes: Routes = [
-    //{ path: '', redirectTo: '/users', pathMatch: 'full' },
-    { path: '', component: MainComponent },
-    { path: 'users', component: UsersTableComponent},
-    { path: 'posts', component: PostsTableComponent},
-    { path: 'users/posts/:userId', component: UserPostsComponent }
+    // { path: '', redirectTo: '', pathMatch: 'full' },
+    { path: '', loadComponent: () => import('./components/main/main.component').then(mod => mod.MainComponent)},
+    { path: 'users', loadComponent: () => import('./components/users-table/users-table.component').then(mod => mod.UsersTableComponent)},
+    { path: 'posts', loadComponent: () => import('./components/posts-table/posts-table.component').then(mod => mod.PostsTableComponent)},
+    { path: 'users/posts/:userId', loadComponent: () => import('./components/user-posts/user-posts.component').then(mod => mod.UserPostsComponent)}
 ];
