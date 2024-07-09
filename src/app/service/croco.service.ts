@@ -12,8 +12,20 @@ export class CrocoService {
 
   constructor(private http: HttpClient) {}
 
-  getData():Observable<any>{
+  fetchUsers():Observable<any>{
     return this.http.get<any>("https://jsonplaceholder.typicode.com/users");
+  }
+
+  fetchPosts():Observable<any>{
+    return this.http.get<any>("https://jsonplaceholder.typicode.com/posts");
+  }
+
+  fetchUserPosts(userId: string):Observable<any>{
+    return this.http.get(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
+  }
+
+  fetchUserName(userId: string):Observable<any> {
+    return this.http.get(`https://jsonplaceholder.typicode.com/users/${userId}`)
   }
 
   toggleMenu(){

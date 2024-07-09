@@ -22,24 +22,24 @@ export class PostsTableComponent {
   constructor(public crocoService: CrocoService, private httpClient: HttpClient) {}
 
   ngOnInit(): void {
-    this.fetchPosts();
-    this.fetchUsers();
+    this.getPosts();
+    this.getUsers();
   }
 
-  fetchPosts() {
-    this.httpClient
-      .get("https://jsonplaceholder.typicode.com/posts")
-      .subscribe((data) => {
-        this.posts = data;
-      });
+  getPosts() {
+      this.crocoService.fetchPosts().subscribe({
+        next: (response) => {
+          this.posts = response
+        }
+      })
   }
 
-  fetchUsers() {
-    this.httpClient
-      .get("https://jsonplaceholder.typicode.com/users")
-      .subscribe((data) => {
-        this.users = data;
-      });
+  getUsers(){
+    this.crocoService.fetchUsers().subscribe({
+      next: (repsone) => {
+        this.users = repsone;
+      }
+    })
   }
 
   getUserName(userId: number): string {

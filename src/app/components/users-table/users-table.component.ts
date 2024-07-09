@@ -20,26 +20,17 @@ export class UsersTableComponent {
   router = inject(Router);
 
   ngOnInit(): void {
-    this.fetchUsers();
-    this.fetchData();
+    this.getUsers();
   }
 
-  constructor(private crocorService: CrocoService) {
+  constructor(private crocoService: CrocoService) {
   }
 
-  fetchData(){
-    this.crocorService.getData().subscribe({
+  getUsers(){
+    this.crocoService.fetchUsers().subscribe({
       next: (repsone) => {
-        console.log(repsone); 
+        this.users = repsone;
       }
-    })
-  }
-
-  fetchUsers(){
-    this.httpClient
-    .get("https://jsonplaceholder.typicode.com/users")
-    .subscribe((data) => {
-      this.users = data;
     })
   }
 

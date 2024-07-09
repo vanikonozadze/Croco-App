@@ -23,19 +23,19 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  fetchUsers(){
-    this.httpClient
-    .get("https://jsonplaceholder.typicode.com/users")
-    .subscribe((data) => {
-      this.users = data;
+  getUsers(){
+    this.crocoService.fetchUsers().subscribe({
+      next: (response) => {
+        this.users = response
+      }
     })
   }
 
-  fetchPosts(){
-    this.httpClient
-    .get("https://jsonplaceholder.typicode.com/posts")
-    .subscribe((data) => {
-      this.posts = data;
+  getPosts(){
+    this.crocoService.fetchPosts().subscribe({
+      next: (response) => {
+        this.posts = response
+      }
     })
   }
 

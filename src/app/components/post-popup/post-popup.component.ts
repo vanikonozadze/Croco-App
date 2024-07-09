@@ -16,7 +16,6 @@ export class PostPopupComponent {
 
   togglePopUpView() {
     this.crocoService.togglePopUp();
-    console.log(this.postData)
   }
 
   handleSidebarClick(event: MouseEvent) {

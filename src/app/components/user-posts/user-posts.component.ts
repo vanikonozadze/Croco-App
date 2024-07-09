@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FooterComponent } from "../footer/footer.component";
+import { CrocoService } from '../../service/croco.service';
 
 @Component({
   selector: 'app-user-posts',
@@ -17,28 +18,30 @@ export class UserPostsComponent {
   userPosts: any;
   authorName: string | undefined;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private crocoService: CrocoService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.userId = params.get('userId')!;
-      this.fetchUserPosts(this.userId);
+      this.getUserPost(this.userId);
       this.fetchUserName(this.userId);
     });
   }
 
-  fetchUserPosts(userId: string): void {
-    this.http.get(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
-      .subscribe((posts: any) => {
-        this.userPosts = posts;
-      });
+  getUserPost(userId: string): void {
+      this.crocoService.fetchUserPosts(userId).subscribe({
+        next: (response) => {
+          this.userPosts = response;
+        }
+      })
   }
 
   fetchUserName(userId: string): void {
-    this.http.get(`https://jsonplaceholder.typicode.com/users/${userId}`)
-      .subscribe((user: any) => {
-        this.authorName = user.name;
-      });
+      this.crocoService.fetchUserName(userId).subscribe({
+        next: (response) => {
+          this.authorName = response.name
+        }
+      })
   }
 
   thisLog(id: number){
