@@ -1,6 +1,6 @@
 header {
   position: relative;
-  background-color: #4CAF50;
+  background-color: #4fc953;
   padding: 10px;
   color: #fff;
 }
@@ -27,7 +27,8 @@ h1{
 }
 
 h1:hover{
-  color: #135c09;
+  color: #0d3e06;
+  transition: 0.3s;
 }
   
 div {

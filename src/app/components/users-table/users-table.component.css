@@ -15,8 +15,23 @@
     width: 500px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 15px 10px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
+}
+
+.posts-button{
+    width: 80px;
+    height: 40px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.posts-button:hover{
+    background-color: #93e096;
+    transition: 0.3s;
 }
 
 .user-box h2 {

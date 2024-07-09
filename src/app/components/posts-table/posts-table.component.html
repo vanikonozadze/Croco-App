@@ -1,1 +1,8 @@
-<p>posts-table works!</p>
+<h1 style="text-align: center; color: #1adc00;">All of the posts</h1> 
+<div class="post-container">
+    <div class="post-box" *ngFor="let post of posts">
+        <h3>Author: {{ getUserName(post.userId) }}</h3>
+        <p>Title - {{ post.title }}</p>
+    </div>
+</div>
+<app-footer></app-footer>

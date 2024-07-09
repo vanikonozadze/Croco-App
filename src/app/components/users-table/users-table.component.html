@@ -4,5 +4,7 @@
         <p>{{user.phone}}</p>
         <p>{{user.email}}</p>
         <p>{{user.company.name}}</p>
+        <button class="posts-button" (click)="viewUserPosts(user.id)">Posts</button>
     </div>
 </div>
+<app-footer></app-footer>

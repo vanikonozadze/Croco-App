@@ -1,5 +1,32 @@
-.main-page-div{
-   text-align: center;
-   height: 100vh;
-   background-color: #ffffff;
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #fff; 
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.content {
+  text-align: center;
+  margin-top: 200px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #1adc00; 
+}
+
+p {
+  font-size: 1.2rem;
+  color: #333; 
 }

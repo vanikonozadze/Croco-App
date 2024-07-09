@@ -1,0 +1,8 @@
+<div class="user-posts-container">
+    <h2>{{ authorName }}'s posts</h2>
+    <div class="post-box" *ngFor="let post of userPosts">
+      <h3>Title: {{ post.title }}</h3>
+      <p>Description: {{ post.body }}</p>
+    </div>
+</div>
+<app-footer></app-footer>
