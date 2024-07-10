@@ -1,8 +1,7 @@
-h1{
+h1 {
     font-size: 48px;
     text-align: center;
     color: #1adc00;
-    padding-top: 100px;
 }
 
 .search-container {
@@ -10,23 +9,23 @@ h1{
     display: flex;
     justify-content: center;
 }
-  
+
 .search-container input {
-    width: 500px;
+    width: 800px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 10px;
     outline: none;
 }
-  
+
 
 .user-container {
     width: 800px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 60px; 
-    justify-content: center; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    justify-content: center;
     padding-top: 50px;
     margin-bottom: 100px;
 }
@@ -46,7 +45,7 @@ h1{
     border-radius: 20px;
 }
 
-.posts-button{
+.posts-button {
     width: 80px;
     height: 40px;
     background-color: #4CAF50;
@@ -56,7 +55,23 @@ h1{
     cursor: pointer;
 }
 
-.posts-button:hover{
+.posts-button:hover {
+    background-color: #93e096;
+    transition: 0.3s;
+}
+
+.todo-list-button {
+    width: 80px;
+    height: 40px;
+    background-color: #4CAF50;
+    color: #fff;
+    margin-left: 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.todo-list-button:hover {
     background-color: #93e096;
     transition: 0.3s;
 }
@@ -76,20 +91,22 @@ h1{
 }
 
 @media (max-width: 1024px) {
-    .user-container{
+    .user-container {
         width: 80%;
-        grid-template-columns: repeat(1, 1fr); 
+        grid-template-columns: repeat(1, 1fr);
     }
-    .search-container input{
+
+    .search-container input {
         width: 400px;
     }
 }
 
 @media (max-width: 480px) {
-    .user-box{
+    .user-box {
         width: 300px;
     }
-    .search-container input{
+
+    .search-container input {
         width: 250px;
     }
 }

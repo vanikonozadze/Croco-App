@@ -50,4 +50,8 @@ export class UsersTableComponent {
     this.router.navigate([`users/posts/${userId.toString()}`]);
   }
 
+  ViewUserTodoList(userId: string): void {
+    this.router.navigate([`todos/${userId.toString()}`]);
+  }
+ 
 }
