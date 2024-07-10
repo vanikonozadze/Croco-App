@@ -29,6 +29,10 @@ export class CrocoService {
     return this.http.get(this.baseApiUrl + `/users/${userId}`)
   }
 
+  fetchUserTodoList(userId: string): Observable<any>{
+    return this.http.get(this.baseApiUrl + `/todos?userId=${userId}`)
+  }
+
   toggleMenu(){
     this.showMenu = !this.showMenu;
   }
