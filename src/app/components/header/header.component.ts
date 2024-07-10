@@ -1,4 +1,4 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit, NgZone  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CrocoService } from '../../service/croco.service';
@@ -11,13 +11,20 @@ import { CrocoService } from '../../service/croco.service';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit {
-  currentDate: Date ;
+  currentDateTime: string;
 
   ngOnInit(): void {
   }
 
-  constructor(private crocoService: CrocoService) {
-    this.currentDate = new Date();
+  constructor(private crocoService: CrocoService, private ngZone: NgZone) {
+    this.currentDateTime = new Date().toLocaleString();
+    this.ngZone.runOutsideAngular(() => {
+      setInterval(() => {
+        this.ngZone.run(() => {
+          this.currentDateTime = new Date().toLocaleString();
+        });
+      }, 1000);
+    }); 
   }
 
   toggleMenuSection(){
