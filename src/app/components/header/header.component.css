@@ -41,3 +41,11 @@ div {
   position: absolute;
   right: 0;
 }
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+    margin-left: 0px;
+  }
+
+}
