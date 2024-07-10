@@ -4,17 +4,20 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { FooterComponent } from "../footer/footer.component";
 import { CrocoService } from '../../service/croco.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-users-table',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, RouterModule, FooterComponent],
+  imports: [CommonModule, HttpClientModule, RouterModule, FooterComponent, FormsModule],
   templateUrl: './users-table.component.html',
   styleUrl: './users-table.component.css'
 })
 export class UsersTableComponent {
 
-  users: any;
+  users: any[] = [];
+  filteredUsers: any[] = [];
+  searchQuery: string = '';
 
   httpClient = inject(HttpClient)
   router = inject(Router);
@@ -28,10 +31,19 @@ export class UsersTableComponent {
 
   getUsers(){
     this.crocoService.fetchUsers().subscribe({
-      next: (repsone) => {
-        this.users = repsone;
+      next: (response) => {
+        this.users = response;
+        this.filteredUsers = response;
       }
     })
+  }
+
+  filterUsers() {
+    const query = this.searchQuery.toLowerCase();
+    this.filteredUsers = this.users.filter(user => 
+      user.name.toLowerCase().includes(query) || 
+      user.email.toLowerCase().includes(query)
+    );
   }
 
   viewUserPosts(userId: string): void {

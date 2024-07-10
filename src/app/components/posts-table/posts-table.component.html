@@ -1,8 +1,8 @@
-<h1 style="text-align: center; color: #1adc00;">All of the posts</h1> 
+<h1>Posts</h1> 
 <div class="post-container">
     <div class="post-box" *ngFor="let post of posts">
         <div class="title-eye-box">
-            <h3>Author: {{ getUserName(post.userId) }}</h3>
+            <h3>{{ getUserName(post.userId) }}</h3>
             <svg (click)="togglePopUpViewWithId(post)" fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
         width="40px" height="40px" viewBox="0 0 442.04 442.04"
         xml:space="preserve">
@@ -28,7 +28,7 @@
     </g>
             </svg>
        </div>
-       <p>Title - {{ post.title }}</p>
+       <p><b>Title of the post</b> - {{ post.title }}</p>
     </div>
 </div>
 <app-post-popup *ngIf="crocoService.showPopUp" [postData]="selectedPostData"></app-post-popup>

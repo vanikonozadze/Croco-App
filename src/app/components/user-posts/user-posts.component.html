@@ -3,7 +3,7 @@
     <div class="post-box" *ngFor="let post of userPosts">
       <div class="title-eye-box">
       <h3>Title: {{ post.title }}</h3>
-        <svg (click)="thisLog(post.id)" fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+        <svg (click)="togglePopUpViewWithId(post)" fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
         width="40px" height="40px" viewBox="0 0 442.04 442.04"
         xml:space="preserve">
     <g>
@@ -28,7 +28,8 @@
     </g>
             </svg>
       </div>
-      <p style="width: 1000px;">Description: {{ post.body }}</p>
+      <p>Description: {{ post.body }}</p>
     </div>
 </div>
+<app-post-popup *ngIf="crocoService.showPopUp" [postData]="selectedPostData"></app-post-popup>
 <app-footer></app-footer>

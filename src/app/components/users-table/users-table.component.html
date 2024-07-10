@@ -1,5 +1,14 @@
-<div class="user-container">
-    <div class="user-box" *ngFor="let user of users">
+<h1>Users</h1>
+<div class="search-container">
+    <input 
+      type="text" 
+      placeholder="Search by name or email..." 
+      [(ngModel)]="searchQuery" 
+      (input)="filterUsers()"
+    />
+  </div> 
+<div [ngClass]="{'single-user': filteredUsers.length === 1}" class="user-container">
+    <div class="user-box" *ngFor="let user of filteredUsers">
         <h2>{{user.name}}</h2>
         <p>{{user.phone}}</p>
         <p>{{user.email}}</p>

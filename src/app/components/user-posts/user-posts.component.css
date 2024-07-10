@@ -1,55 +1,85 @@
 .user-posts-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    border-radius: 10px;
-  }
-  
-  .user-posts-container h2 {
-    font-size: 2rem;
-    color: #1adc00;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .post-box {
-    background-color: #ffffff; 
-    border: 1px solid #dddddd; 
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  }
-  
-  .post-box:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
-  }
-  
-  .post-box h3 {
-    font-size: 1.5rem;
-    color: #333333; 
-    margin-bottom: 10px;
-  }
-  
-  .post-box p {
-    font-size: 1rem;
-    color: #666666; 
-    line-height: 1.6;
-  }
-  
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px 40px 20px;
+  border-radius: 10px;
+}
 
-  .title-eye-box{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.user-posts-container h2 {
+  font-size: 2rem;
+  color: #1adc00;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.post-box {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.post-box h3 {
+  font-size: 1.5rem;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.post-box p {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.6;
+  width: 975px;
+}
+
+
+.title-eye-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-eye-box svg {
+  cursor: pointer;
+}
+
+.title-eye-box svg:hover {
+  fill: #1adc00;
+}
+
+@media (max-width: 1024px) {
+  .user-posts-container {
+    width: 80%;
+    grid-template-columns: repeat(1, 1fr);
   }
-  
-  .title-eye-box svg{
-    cursor: pointer;
+
+  .search-container input {
+    width: 400px;
   }
-  
-  .title-eye-box svg:hover{
-    fill: #1adc00;
+
+  .post-box p {
+    width: 80%;
   }
+
+  .post-box h3 {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-box {
+    width: 300px;
+  }
+
+  .search-container input {
+    width: 250px;
+  }
+}

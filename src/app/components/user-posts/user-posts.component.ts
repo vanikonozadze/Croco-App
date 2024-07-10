@@ -4,11 +4,12 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FooterComponent } from "../footer/footer.component";
 import { CrocoService } from '../../service/croco.service';
+import { PostPopupComponent } from "../post-popup/post-popup.component";
 
 @Component({
   selector: 'app-user-posts',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, RouterModule, FooterComponent],
+  imports: [CommonModule, HttpClientModule, RouterModule, FooterComponent, PostPopupComponent],
   templateUrl: './user-posts.component.html',
   styleUrl: './user-posts.component.css'
 })
@@ -17,8 +18,9 @@ export class UserPostsComponent {
   userId: string | undefined;
   userPosts: any;
   authorName: string | undefined;
+  selectedPostData: any;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private crocoService: CrocoService) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, public crocoService: CrocoService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -44,8 +46,9 @@ export class UserPostsComponent {
       })
   }
 
-  thisLog(id: number){
-    console.log(id)
+  togglePopUpViewWithId(post: any) {
+    this.crocoService.togglePopUp();
+    this.selectedPostData = post;
   }
 
 }

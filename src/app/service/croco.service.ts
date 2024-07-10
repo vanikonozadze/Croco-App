@@ -7,25 +7,26 @@ import { Observable } from 'rxjs';
 })
 export class CrocoService {
 
+  private baseApiUrl: string = "https://jsonplaceholder.typicode.com"
   public showMenu: boolean = false;
   public showPopUp: boolean = false;
 
   constructor(private http: HttpClient) {}
 
   fetchUsers():Observable<any>{
-    return this.http.get<any>("https://jsonplaceholder.typicode.com/users");
+    return this.http.get<any>(this.baseApiUrl + "/users");
   }
 
   fetchPosts():Observable<any>{
-    return this.http.get<any>("https://jsonplaceholder.typicode.com/posts");
+    return this.http.get<any>(this.baseApiUrl + "/posts");
   }
 
   fetchUserPosts(userId: string):Observable<any>{
-    return this.http.get(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
+    return this.http.get(this.baseApiUrl + `/posts?userId=${userId}`)
   }
 
   fetchUserName(userId: string):Observable<any> {
-    return this.http.get(`https://jsonplaceholder.typicode.com/users/${userId}`)
+    return this.http.get(this.baseApiUrl + `/users/${userId}`)
   }
 
   toggleMenu(){

@@ -1,16 +1,17 @@
 header {
-  position: relative;
+  width: 100%;
+  position: fixed;
   background-color: #4fc953;
   padding: 10px;
   color: #fff;
 }
-  
-.header-items{
+
+.header-items {
   display: flex;
   align-items: center;
 }
 
-.menu-icon{
+.menu-icon {
   cursor: pointer;
 }
 
@@ -18,26 +19,26 @@ a {
   text-decoration: none;
   color: #000;
 }
-  
 
-h1{
-  padding-left: 30px;
+
+h1 {
+  margin-left: 20px;
   text-decoration: none;
   color: #fff;
 }
 
-h1:hover{
+h1:hover {
   color: #0d3e06;
   transition: 0.3s;
   cursor: pointer;
 }
-  
+
 div {
   margin: 0 10px;
 }
- 
 
-.date{
+
+.date {
   position: absolute;
   right: 0;
 }
