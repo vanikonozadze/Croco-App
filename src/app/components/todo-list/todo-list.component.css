@@ -45,3 +45,38 @@ h1 {
 .completed {
     background-color: #1adc00;
 }
+
+@media (max-width: 1024px) {
+    .todo-list-container {
+        width: 80%;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    h1 {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .todo-list-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1 {
+        width: 80%;
+        font-size: 38px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .todo-list-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    h1 {
+        font-size: 34px;
+        margin: 0 auto;
+    }
+}
