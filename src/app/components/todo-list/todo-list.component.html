@@ -1,8 +1,10 @@
-<h1>{{authorName}}'s Todo List</h1>
-<div class="todo-list-container">
+<div class="page-container">
+  <h1>{{authorName}}'s Todo List</h1>
+  <div class="todo-list-container">
     <div *ngFor="let todo of userTodoList" [ngClass]="{'completed': todo.completed}" class="todo-list-box">
-        <h2>Todo card</h2>
-        <p>{{ todo.title }}</p>
+      <h2>Todo card</h2>
+      <p>{{ todo.title }}</p>
     </div>
+  </div>
+  <app-footer></app-footer>
 </div>
-<app-footer></app-footer>

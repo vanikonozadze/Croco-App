@@ -1,20 +1,24 @@
-<h1>Users</h1>
-<div class="search-container">
-    <input 
-      type="text" 
-      placeholder="Search by name or email..." 
-      [(ngModel)]="searchQuery" 
-      (input)="filterUsers()"
-    />
-  </div> 
-<div [ngClass]="{'single-user': filteredUsers.length === 1}" class="user-container">
-    <div class="user-box" *ngFor="let user of filteredUsers">
+<div class="page-container">
+  <div class="content-wrapper">
+    <h1>Users</h1>
+    <div class="search-container">
+      <input 
+        type="text" 
+        placeholder="Search by name or email..." 
+        [(ngModel)]="searchQuery" 
+        (input)="filterUsers()"
+      />
+    </div> 
+    <div [ngClass]="{'single-user': filteredUsers.length === 1}" class="user-container">
+      <div class="user-box" *ngFor="let user of filteredUsers">
         <h2>{{user.name}}</h2>
         <p>{{user.phone}}</p>
         <p>{{user.email}}</p>
         <p>{{user.company.name}}</p>
         <button class="posts-button" (click)="viewUserPosts(user.id)">Posts</button>
         <button class="todo-list-button" (click)="ViewUserTodoList(user.id)">Todo-list</button>
+      </div>
     </div>
+  </div>
+  <app-footer></app-footer>
 </div>
-<app-footer></app-footer>

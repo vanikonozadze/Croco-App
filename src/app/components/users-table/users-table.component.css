@@ -1,3 +1,13 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    flex: 1;
+}
+
 h1 {
     font-size: 48px;
     text-align: center;
@@ -17,7 +27,6 @@ h1 {
     border-radius: 10px;
     outline: none;
 }
-
 
 .user-container {
     width: 800px;
@@ -109,4 +118,10 @@ h1 {
     .search-container input {
         width: 250px;
     }
+}
+
+/* Ensure the footer stays at the bottom */
+app-footer {
+    flex-shrink: 0;
+    width: 100%;
 }
