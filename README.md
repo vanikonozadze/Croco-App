@@ -31,14 +31,17 @@ Welcome to the Croco App, an Angular-based web application that utilizes the JSO
 
 3. **Data Models**
    - Strongly typed data models for users, posts, and todo lists ensuring data integrity.
+  
+4. **Routing**
+   - Angular Router integration ensuring seamless navigation between different sections of the application, including user lists, post lists, and todo lists.
 
-4. **Lazy Loading**
+5. **Lazy Loading**
    - Improved performance by loading modules on demand.
 
-5. **RxJS Integration**
+6. **RxJS Integration**
    - Reactive programming with observables for handling asynchronous data streams.
 
-6. **Validation and Error Handling**
+7. **Validation and Error Handling**
    - Clear and concise error messages for enhanced user experience.
 
 ## Evaluation Criteria
