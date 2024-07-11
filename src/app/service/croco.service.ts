@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Post } from '../models/post.model';
+import { Todo } from '../models/todo.model';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,24 +16,24 @@ export class CrocoService {
 
   constructor(private http: HttpClient) {}
 
-  fetchUsers():Observable<any>{
-    return this.http.get<any>(this.baseApiUrl + "/users");
+  fetchUsers():Observable<User[]>{
+    return this.http.get<User[]>(this.baseApiUrl + "/users");
   }
 
-  fetchPosts():Observable<any>{
-    return this.http.get<any>(this.baseApiUrl + "/posts");
+  fetchPosts():Observable<Post[]>{
+    return this.http.get<Post[]>(this.baseApiUrl + "/posts");
   }
 
-  fetchUserPosts(userId: string):Observable<any>{
-    return this.http.get(this.baseApiUrl + `/posts?userId=${userId}`)
+  fetchUserPosts(userId: string):Observable<Post[]>{
+    return this.http.get<Post[]>(this.baseApiUrl + `/posts?userId=${userId}`)
   }
 
-  fetchUserName(userId: string):Observable<any> {
-    return this.http.get(this.baseApiUrl + `/users/${userId}`)
+  fetchUserName(userId: string):Observable<User> {
+    return this.http.get<User>(this.baseApiUrl + `/users/${userId}`)
   }
 
-  fetchUserTodoList(userId: string): Observable<any>{
-    return this.http.get(this.baseApiUrl + `/todos?userId=${userId}`)
+  fetchUserTodoList(userId: string): Observable<Todo[]>{
+    return this.http.get<Todo[]>(this.baseApiUrl + `/todos?userId=${userId}`)
   }
 
   toggleMenu(){

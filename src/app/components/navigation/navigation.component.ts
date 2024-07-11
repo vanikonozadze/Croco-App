@@ -13,30 +13,11 @@ import { RouterModule } from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
 
-  users: any;
-  posts: any;
-
   httpClient = inject(HttpClient)
 
   constructor(private crocoService: CrocoService) {}
   
   ngOnInit(): void {
-  }
-
-  getUsers(){
-    this.crocoService.fetchUsers().subscribe({
-      next: (response) => {
-        this.users = response
-      }
-    })
-  }
-
-  getPosts(){
-    this.crocoService.fetchPosts().subscribe({
-      next: (response) => {
-        this.posts = response
-      }
-    })
   }
 
   toggleMenuView() {

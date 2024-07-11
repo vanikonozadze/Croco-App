@@ -1,3 +1,4 @@
+import { User } from './../../models/user.model';
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
@@ -5,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from "../footer/footer.component";
 import { PostPopupComponent } from "../post-popup/post-popup.component";
 import { CrocoService } from '../../service/croco.service';
+import { Post } from '../../models/post.model';
 
 @Component({
   selector: 'app-posts-table',
@@ -15,8 +17,8 @@ import { CrocoService } from '../../service/croco.service';
 })
 export class PostsTableComponent {
 
-  posts: any;
-  users: any;
+  posts: Post[] = [];
+  users: User[] = [];
   selectedPostData: any;
 
   constructor(public crocoService: CrocoService, private httpClient: HttpClient) {}

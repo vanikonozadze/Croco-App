@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FooterComponent } from "../footer/footer.component";
 import { CrocoService } from '../../service/croco.service';
 import { PostPopupComponent } from "../post-popup/post-popup.component";
+import { Post } from '../../models/post.model';
 
 @Component({
   selector: 'app-user-posts',
@@ -16,11 +17,11 @@ import { PostPopupComponent } from "../post-popup/post-popup.component";
 export class UserPostsComponent {
 
   userId: string | undefined;
-  userPosts: any;
+  userPosts: Post[] = [];
   authorName: string | undefined;
-  selectedPostData: any;
+  selectedPostData: Post[] = [];
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, public crocoService: CrocoService) { }
+  constructor(private route: ActivatedRoute, public crocoService: CrocoService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {

@@ -5,6 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 import { FooterComponent } from "../footer/footer.component";
 import { CrocoService } from '../../service/croco.service';
 import { FormsModule } from '@angular/forms';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-users-table',
@@ -15,8 +16,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class UsersTableComponent {
 
-  users: any[] = [];
-  filteredUsers: any[] = [];
+  users: User[] = [];
+  filteredUsers: User[] = [];
   searchQuery: string = '';
 
   httpClient = inject(HttpClient)
@@ -46,11 +47,11 @@ export class UsersTableComponent {
     );
   }
 
-  viewUserPosts(userId: string): void {
+  viewUserPosts(userId: number): void {
     this.router.navigate([`users/posts/${userId.toString()}`]);
   }
 
-  ViewUserTodoList(userId: string): void {
+  ViewUserTodoList(userId: number): void {
     this.router.navigate([`todos/${userId.toString()}`]);
   }
  

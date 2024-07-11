@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CrocoService } from '../../service/croco.service';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from "../footer/footer.component";
+import { Todo } from '../../models/todo.model';
 
 @Component({
   selector: 'app-todo-list',
@@ -15,9 +16,8 @@ import { FooterComponent } from "../footer/footer.component";
 export class TodoListComponent {
 
   userId: string | undefined;
-  userTodoList: any;
+  userTodoList: Todo[] = [];
   authorName: string | undefined;
-  selectedPostData: any;
 
   constructor(private route: ActivatedRoute, private http: HttpClient, public crocoService: CrocoService) { }
 
@@ -33,7 +33,6 @@ export class TodoListComponent {
     this.crocoService.fetchUserTodoList(userId).subscribe({
       next: (response) => {
         this.userTodoList = response
-        console.log(this.userTodoList); 
       }
     })
   }
