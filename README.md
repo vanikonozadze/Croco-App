@@ -1,6 +1,6 @@
 # Croco App
 
-Welcome to the Croco App, an Angular-based web application that utilizes the JSONPlaceholder API to manage users, posts, and todo lists. This application demonstrates effective use of Angular features, providing a seamless user experience with a fully responsive and cross-browser compatible interface.
+Welcome to the Croco App, an Angular-based (Angular v17) version web application that utilizes the JSONPlaceholder API to manage users, posts, and todo lists. This application demonstrates effective use of Angular features, providing a seamless user experience with a fully responsive and cross-browser compatible interface.
 
 ## Core Features
 
